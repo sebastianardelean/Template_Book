@@ -1,0 +1,228 @@
+\documentclass[british,english,american]{scrbook}
+
+% Includes
+\RequirePackage{amsmath,amsfonts,amssymb}
+% Page Size
+%\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=3.5cm]{geometry} 
+% \usepackage{fontspec}
+% \setmainfont[Ligatures=TeX]{Verdana}
+% \setsansfont[Ligatures=TeX]{Verdana}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=1.69in,bmargin=1.69in,lmargin=1.46in,rmargin=1.46in}
+% Encoding
+\usepackage[utf8]{inputenc} 
+% Images
+\usepackage{graphicx}
+% Code Formatting %
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\lstdefinelanguage{args}{
+    sensitive=false,
+    alsoletter={.},
+    moredelim=[s][\color{red}]{<}{>},
+    moredelim=[s][\color{blue}]{[}{]},
+    moredelim=[is][\color{orange}]{:}{:},
+    keywords=[10]{...},
+    keywordstyle=[10]{\color{magenta}},
+}
+\lstnewenvironment{arguments}
+{\lstset{language=args}}
+{}
+% Color for the code formatting %
+\usepackage{color}
+
+
+
+\usepackage{mathrsfs}
+
+\usepackage[numbers]{natbib}
+% Font: Times New Roman
+\usepackage{times}
+
+% Table of contents bindings
+\usepackage[nottoc]{tocbibind}
+% Table of contents reference links
+\usepackage[unicode]{hyperref}
+% British language
+\usepackage[british]{babel}
+% Blank Page
+\usepackage{afterpage}
+% Use caption packages for source..
+\usepackage{caption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+% Use acronym for glossaries
+\usepackage[acronym]{glossaries}
+% Use for physics notations
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% Use qcircuit for quantum circuits representation
+\usepackage[braket]{qcircuit}
+\usepackage{physics}
+
+\usepackage{etoolbox}
+\usepackage{enumitem}
+% \usepackage{enumerate}
+\usepackage{bm}
+
+
+
+
+\usepackage{float}
+\usepackage{csquotes}
+
+\usepackage{algorithm,algpseudocode}
+\counterwithin{algorithm}{chapter}
+\algnewcommand\algorithmicforeach{\textbf{for each}}
+\algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
+
+
+
+% Options:
+\renewcommand{\glossarysection}[2][]{}
+\makeglossaries
+
+% Line Spread
+\linespread{1}  
+% Image Path
+\graphicspath{ {figures/} }
+% Paragraph Indentation
+%\setlength{\parindent}{1cm}
+
+% Configure colors for code formatting %
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{default_code_style}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=default_code_style}
+
+% Create source command to specify source of the figures
+\newcommand{\source}[1]{\caption*{Source: {#1}} }
+
+% **************************************************
+% Information and Commands for Reuse
+% **************************************************
+\newcommand{\thesisTitle}{Title}
+\newcommand{\thesisName}{\href{mailto://sebastian.ardelean@student.upt.ro}{PhD.eng. Sebastian Mihai ARDELEAN} }
+% \newcommand{\thesisSubject}{PhD Report No. 1}
+% \newcommand{\thesisDate}{January 2024}
+
+
+% \newcommand{\thesisFirstSupervisor}{Prof. dr. eng. Mihai UDRESCU-MILOSAV}
+
+\newcommand{\thesisUniversity}{\protect{\href{http://www.upt.ro}{Politehnica University of Timisoara}}}
+\newcommand{\thesisUniversityDepartment}{\href{http://www.cs.upt.ro}{Department of Computer and Information Technology}}
+\newcommand{\thesisUniversityCity}{Timisoara}
+\newcommand{\thesisUniversityStreetAddress}{2 V. Parvan Boulevard}
+\newcommand{\thesisUniversityPostalCode}{300223}
+
+
+% \usepackage{subfig} % Do not use it cause it adds 2 paranthesses
+\makeatother
+
+\usepackage{babel}
+\usepackage{listings}
+\addto\captionsamerican{\renewcommand{\lstlistingname}{Listing}}
+\addto\captionsbritish{\renewcommand{\algorithmname}{Algorithm}}
+\addto\captionsbritish{\renewcommand{\lstlistingname}{Listing}}
+\addto\captionsenglish{\renewcommand{\algorithmname}{Algorithm}}
+\addto\captionsenglish{\renewcommand{\lstlistingname}{Listing}}
+\renewcommand{\lstlistingname}{Listing}
+
+\begin{document}
+
+% Disable page numbering
+\pagenumbering{gobble}
+
+% Introductory Stuff
+\input{thesis/cover.tex}
+
+
+
+
+
+
+
+\tableofcontents{\newpage}
+% \afterpage{\null\newpage}
+% Enable Page Numbering
+\setcounter{page}{1}
+\pagenumbering{arabic}
+    
+% Thesis content
+\input{thesis/chapters/ch01.tex}
+
+
+
+
+
+
+
+% Endpages
+
+% Disable page numbering
+
+\appendix
+\input{thesis/appendix/appendix_a}
+
+\pagenumbering{gobble}
+
+
+\chapter*{Acronyms}
+\printglossary[type=\acronymtype]
+\listoffigures
+\listoftables
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
